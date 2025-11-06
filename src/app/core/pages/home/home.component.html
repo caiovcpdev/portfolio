@@ -1,0 +1,11 @@
+<div class="container text-center mt-5" *ngIf="profile">
+  <img src="assets/avatar.png" class="rounded-circle mb-3" width="120" alt="{{ profile?.name }}">
+  <h2>{{ profile?.name }}</h2>
+  <h5 class="text-muted">{{ profile?.role }}</h5>
+  <p class="mt-3">{{ profile?.summary }}</p>
+
+  <div class="mt-4">
+    <a [href]="profile?.linkedin" target="_blank" class="btn btn-primary me-2">LinkedIn</a>
+    <a [href]="profile?.github" target="_blank" class="btn btn-dark">GitHub</a>
+  </div>
+</div>
