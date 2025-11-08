@@ -2,8 +2,88 @@
   background: linear-gradient(180deg, #fff, #f8f9fa);
   padding-top: 6rem;
   padding-bottom: 4rem;
+  overflow: hidden;
 }
+
+/* Imagem do perfil */
 .profile-img {
-  object-fit: cover; 
+  object-fit: cover;
   object-position: center;
+  width: 150px;
+  height: 150px;
+  max-width: 100%;
+}
+
+/* Texto centralizado */
+.home-hero h2.name {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.home-hero h5.role {
+  font-size: 1.2rem;
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+.home-hero .summary {
+  max-width: 600px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Botões */
+.home-hero .btn {
+  margin: 0.3rem 0.2rem;
+  width: auto;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .home-hero {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+  }
+
+  .home-hero h2.name {
+    font-size: 1.6rem;
+  }
+
+  .home-hero h5.role {
+    font-size: 1rem;
+  }
+
+  .home-hero .summary {
+    max-width: 90%;
+    font-size: 0.95rem;
+  }
+
+  .home-hero .btn {
+    display: block;
+    width: 80%;
+    margin: 0.5rem auto;
+  }
+
+  .button-group .btn {
+    width: 80%; /* botões ocupam 80% da largura em telas pequenas */
+  }
+}
+
+@media (max-width: 480px) {
+  .home-hero h2.name {
+    font-size: 1.4rem;
+  }
+
+  .home-hero h5.role {
+    font-size: 0.9rem;
+  }
+
+  .home-hero .summary {
+    font-size: 0.9rem;
+  }
+
+  .home-hero .profile-img {
+    width: 120px;
+    height: 120px;
+  }
 }
