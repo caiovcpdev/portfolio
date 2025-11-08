@@ -15,14 +15,25 @@ export class ContactComponent {
   name = '';
   email = '';
   message = '';
+  loading = false;
+
+  feedbackMessage = '';
+  feedbackType: 'success' | 'error' | null = null;
 
   constructor (private ContactService : ContactService) {}
 
-  send() {
+  send(event: Event) {
+
+    event.preventDefault(); 
+
     if (!this.name || !this.email || !this.message) { 
-      alert('Preencha todos os campos!');
+      this.showFeedback('Por favor, preencha todos os campos antes de enviar.', 'error');
       return;
     }
+
+    this.loading = true;
+    this.feedbackMessage = '';
+
 
     const data = {
       name: this.name,
@@ -32,13 +43,20 @@ export class ContactComponent {
 
     this.ContactService.sendContact(data).subscribe({
       next: (res) => {
-        alert(`Mensagem enviada! Obrigado pelo contato, ${this.name}`);
+        this.showFeedback(`Obrigado pelo contato, ${this.name}! Sua mensagem foi enviada com sucesso.`, 'success');
         this.name = this.email = this.message = '';
       },
       error: (err) => {
         console.error(err);
-        alert('Erro ao enviar a mensagem. Tente novamente mais tarde.');
-      }
-    })
+        this.showFeedback('Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente mais tarde.', 'error');
+      },
+      complete: () => {this.loading = false;}
+    });
+  }
+
+  private showFeedback(message: string, type: 'success'|'error') {
+    this.feedbackMessage = message;
+    this.feedbackType = type;
+    setTimeout (()=>(this.feedbackMessage = ''), 10000) //10s
   }
 }

@@ -5,7 +5,7 @@ import { Profile } from "../models/profile.model";
 
 @Injectable ({providedIn: 'root'})
 export class ProfileService {
-    private apiUrl = 'https://localhost:7076/api/Profile';
+    private apiUrl = 'http://caiovcpdev-api.runasp.net/api/Profile';
 
     constructor (private http: HttpClient) {}
 

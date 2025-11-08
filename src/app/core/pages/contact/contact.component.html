@@ -2,23 +2,35 @@
   <div class="container">
     <h2 class="fw-bold text-center mb-5">Entre em Contato</h2>
 
-    <form class="mx-auto" style="max-width:600px">
+    <form class="mx-auto" style="max-width:600px" (submit)="send($event)">
       <div class="mb-3">
         <label class="form-label">Nome</label>
-        <input type="text" class="form-control" placeholder="Seu nome" [(ngModel)] = "name" name = "name">
+        <input type="text" class="form-control" placeholder="Seu nome" [(ngModel)]="name" name="name">
       </div>
 
       <div class="mb-3">
         <label class="form-label">Email</label>
-        <input type="email" class="form-control" placeholder="seu@email.com" [(ngModel)] = "email" name = "email">
+        <input type="email" class="form-control" placeholder="seu@email.com" [(ngModel)]="email" name="email">
       </div>
 
       <div class="mb-3">
         <label class="form-label">Mensagem</label>
-        <textarea class="form-control" rows="5" placeholder="Digite sua mensagem" [(ngModel)] = "message" name = "message"></textarea>
+        <textarea class="form-control" rows="5" placeholder="Digite sua mensagem" [(ngModel)]="message" name="message"></textarea>
       </div>
 
-      <button class="btn btn-primary w-100 py-2" (click)="send()">Enviar Mensagem</button>
+      <button class="btn btn-primary w-100 py-2" [disabled]="loading">
+        <span *ngIf="!loading">Enviar Mensagem</span>
+        <span *ngIf="loading">
+          <div class="spinner-border spinner-border-sm me-2" role="status"></div>
+          Enviando...
+        </span>
+      </button>
     </form>
+
+    <!-- Mensagem de feedback -->
+    <div *ngIf="feedbackMessage" class="alert mt-4 text-center"
+         [ngClass]="{'alert-success': feedbackType === 'success', 'alert-danger': feedbackType === 'error'}">
+      {{ feedbackMessage }}
+    </div>
   </div>
 </section>
