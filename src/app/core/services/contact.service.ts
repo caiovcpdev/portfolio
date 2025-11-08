@@ -5,7 +5,7 @@ import { Contatc } from "../models/contact.model";
 
 @Injectable ({providedIn: 'root'})
 export class ContactService {
-    private apiUrl = 'http://caiovcpdev-api.runasp.net/api/Contact/send';
+    private apiUrl = 'https://caiovcpdev-api.runasp.net/api/Contact/send';
 
     constructor (private http: HttpClient) {}
 
