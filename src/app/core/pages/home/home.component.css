@@ -1,0 +1,9 @@
+.home-hero {
+  background: linear-gradient(180deg, #fff, #f8f9fa);
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+}
+.profile-img {
+  object-fit: cover; 
+  object-position: center;
+}

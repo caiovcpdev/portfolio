@@ -3,6 +3,7 @@ import { provideRouter } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
 import { AppComponent } from './app/core/app.component';
 import { routes } from './app/core/app.routes';
+import AOS from 'aos';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -10,3 +11,5 @@ bootstrapApplication(AppComponent, {
     provideHttpClient()
   ]
 }).catch(err => console.error(err));
+
+AOS.init();

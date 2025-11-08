@@ -6,19 +6,19 @@ export class ProjectService {
     getProjects(): Project[] {
         return [
              {
-                name: 'Sistema de Gestão de Veículos',
-                description: 'Aplicação em .NET e Angular para controle de frota e infrações.',
-                link: 'https://github.com/caiovcpdev'
+                name: '🏋️‍♂️ Gym Power',
+                description: 'Solução desenvolvida com Expo, React Native, Node.Js e JWT, criado para gerenciamento e controle de academias.',
+                link: 'https://github.com/caiovcpdev/gym-power'
             },
             {
-                name: 'API Financeira',
-                description: 'API em .NET Core para emissão de boletos e integração bancária.',
-                link: 'https://github.com/caiovcpdev'
+                name: '🎭 Controle Cordeiros Carnaval',
+                description: 'Sistema web construido com ASP.NET MVC voltado à gestão de cordeiros (voluntários responsáveis por isolar blocos de carnaval).',
+                link: 'https://github.com/caiovcpdev/Controle-Cordeiros-Carnaval'
             },
             {
-                name: 'Dashboard Interativo',
-                description: 'Dashboard Angular com gráficos e filtros dinâmicos usando PrimeNG.',
-                link: 'https://github.com/caiovcpdev'
+                name: '🤖 MeuBotTelegram',
+                description: 'Bot desenvolvido em C# para automação de interações no Telegram. Permite responder mensagens, executar comandos personalizados e integrar com APIs externas, servindo como base para bots de atendimento ou notificações.',
+                link: 'https://github.com/caiovcpdev/MeuBotTelegram'
             }
         ]
     }
